@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+    File:        sd_A4_javascriptpage.html
+    Author:      Sachin Dangal | Student ID: 11873136
+    Subject:     ITC293 - Assessment 4
+    Description: JavaScript demonstration page for NexaCore Corporation.
+                 Contains a button that uses JavaScript (window.open) to
+                 open the newsletter signup form in a new browser tab.
+                 This satisfies the requirement: "The form should open in
+                 a new window (or tab) from your Javascriptpage.html page."
+    Last edited: 7 June 2026
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NexaCore Corporation JavaScript page — Sachin Dangal ITC293 A4.">
+    <meta name="author" content="Sachin Dangal">
+    <title>NexaCore - JavaScript Page</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+    <!-- External JS file — openNewsletterForm() is defined in scripts.js -->
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <img src="logo.png" alt="SD Portfolio logo" class="site-logo">
+        <a href="index.html" class="site-title">Sachin Dangal</a>
+    </header>
+
+    <nav class="navbar" aria-label="Main navigation">
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="sd_A4_resume.html" class="nav-btn">My CV</a>
+        <a href="sd_A4_about.html" class="nav-btn">About Me</a>
+        <a href="sd_A4_web_skills.html" class="nav-btn">Web Skills</a>
+        <a href="sd_A4_communication.html" class="nav-btn">Communication</a>
+        <a href="sd_A4_ai_skills.html" class="nav-btn">AI &amp; Automation</a>
+        <a href="sd_A4_problem_solving.html" class="nav-btn">Problem Solving</a>
+    </nav>
+
+    <main>
+        <section class="page-hero">
+            <h1>NexaCore Corporation</h1>
+            <p>JavaScript demonstration page &mdash; newsletter signup and interactive features.</p>
+        </section>
+
+        <div class="card">
+            <h2>About NexaCore Corporation</h2>
+            <p>
+                NexaCore Corporation is a fictitious technology company used for this assessment.
+                NexaCore specialises in digital transformation services for small and medium businesses,
+                offering solutions in cloud infrastructure, AI integration, cybersecurity, software development,
+                and IT support.
+            </p>
+            <p>
+                The company values innovation, clear communication, and building lasting relationships with
+                its clients across Australia.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Stay Up to Date &mdash; Newsletter Signup</h2>
+            <p>
+                Subscribe to the NexaCore newsletter to receive updates on new services, industry news,
+                and technology tips. The form opens in a new tab for a distraction-free signup experience.
+            </p>
+            <div class="info-box">
+                Clicking the button below will open the newsletter signup form in a new browser tab
+                using JavaScript's <code>window.open()</code> function.
+            </div>
+            <!--
+                onclick calls openNewsletterForm() from scripts.js.
+                That function runs: window.open('sd_A4_newsletter.html', '_blank')
+                which opens the form in a new tab as required.
+            -->
+            <button class="btn-accent" onclick="openNewsletterForm()">
+                Open Newsletter Signup Form
+            </button>
+        </div>
+
+        <div class="card">
+            <h2>JavaScript Features on This Page</h2>
+            <p>This page demonstrates the following JavaScript concepts implemented for Assessment 4:</p>
+            <ul>
+                <li><strong>window.open()</strong> &mdash; opens the newsletter form in a new tab.</li>
+                <li><strong>External JS file</strong> &mdash; <code>scripts.js</code> contains all functions, keeping HTML clean.</li>
+                <li><strong>setActiveNav()</strong> &mdash; automatically highlights the correct nav link on each page.</li>
+                <li><strong>validateNewsletterForm()</strong> &mdash; validates required fields before form submission.</li>
+                <li><strong>showWelcomeAlert()</strong> &mdash; displays an onload alert on the newsletter page.</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sachin Dangal &mdash; All text, images, and code on this website are my original work or are used with permission from the copyright holder.</p>
+        <p>Created for ITC293, Charles Sturt University, 2026 Session 1.</p>
+    </footer>
+</body>
+</html>
