@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--
+    File:        sd_A4_web_skills.html
+    Author:      Sachin Dangal | Student ID: 11873136
+    Subject:     ITC293 - Assessment 4
+    Description: Web development skills page. Links to the JavaScript
+                 page from which the newsletter form is opened.
+    Last edited: 7 June 2026
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sachin Dangal's ITC293 portfolio website.">
+    <meta name="author" content="Sachin Dangal">
+    <title>Sachin Dangal - Web Skills</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <img src="logo.png" alt="SD Portfolio logo" class="site-logo">
+        <a href="index.html" class="site-title">Sachin Dangal</a>
+    </header>
+
+    <nav class="navbar" aria-label="Main navigation">
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="sd_A4_resume.html" class="nav-btn">My CV</a>
+        <a href="sd_A4_about.html" class="nav-btn">About Me</a>
+        <a href="sd_A4_web_skills.html" class="nav-btn">Web Skills</a>
+        <a href="sd_A4_communication.html" class="nav-btn">Communication</a>
+        <a href="sd_A4_ai_skills.html" class="nav-btn">AI &amp; Automation</a>
+        <a href="sd_A4_problem_solving.html" class="nav-btn">Problem Solving</a>
+    </nav>
+
+    <main>
+        <section class="page-hero">
+            <h1>Web Development Skills</h1>
+            <p>Core technical skills, tools, and a JavaScript demonstration for NexaCore Corporation.</p>
+        </section>
+
+        <div class="card">
+            <h2>Core Web Technologies</h2>
+            <p>These are the main web skills I have practised while building this portfolio.</p>
+            <div class="skills-grid">
+                <div class="skill-item">HTML5<span class="skill-level">Intermediate</span></div>
+                <div class="skill-item">CSS3<span class="skill-level">Intermediate</span></div>
+                <div class="skill-item">Responsive Design<span class="skill-level">Intermediate</span></div>
+                <div class="skill-item">CSS Flexbox<span class="skill-level">Intermediate</span></div>
+                <div class="skill-item">CSS Grid<span class="skill-level">Beginner</span></div>
+                <div class="skill-item">JavaScript<span class="skill-level">Beginner</span></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Design and Development Tools</h2>
+            <p>Tools I use when planning, building, and reviewing website projects.</p>
+            <div class="skills-grid">
+                <div class="skill-item">VS Code<span class="skill-level">Intermediate</span></div>
+                <div class="skill-item">Canva<span class="skill-level">Intermediate</span></div>
+                <div class="skill-item">Figma<span class="skill-level">Beginner</span></div>
+                <div class="skill-item">GitHub<span class="skill-level">Beginner</span></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>What I Built for This Portfolio</h2>
+            <p>
+                For Assessment 4 I extended the A3 portfolio by adding JavaScript interactivity and a newsletter
+                signup form for NexaCore Corporation. Key technical decisions included:
+            </p>
+            <ul>
+                <li>All JavaScript moved to an external <code>scripts.js</code> file for reusability.</li>
+                <li>Form validation uses a named function <code>validateNewsletterForm()</code> — called via <code>onsubmit</code> on the form element.</li>
+                <li>An <code>onload</code> alert greets users when the newsletter page opens.</li>
+                <li>CSS variables (<code>:root</code>) keep the colour scheme consistent and easy to update.</li>
+                <li>A <code>setActiveNav()</code> function automatically highlights the correct nav button on each page.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>JavaScript Page &amp; Newsletter Form</h2>
+            <p>
+                As part of demonstrating JavaScript skills, I created a dedicated JavaScript page for NexaCore Corporation.
+                From that page, visitors can open the newsletter signup form in a new tab. Click the button below to visit that page.
+            </p>
+            <!-- Link to the JavaScript page, not directly to the form -->
+            <a href="sd_A4_javascriptpage.html" class="btn-accent">Go to NexaCore JS Page</a>
+        </div>
+
+        <div class="card">
+            <h2>Learning Roadmap</h2>
+            <ol>
+                <li>Deepen JavaScript knowledge — DOM manipulation, events, and APIs.</li>
+                <li>Practise responsive layouts across more device sizes.</li>
+                <li>Learn about web accessibility (WCAG guidelines and ARIA roles).</li>
+                <li>Build small portfolio projects to showcase skills externally.</li>
+                <li>Explore back-end basics — servers, databases, and form processing.</li>
+                <li>Connect web skills with AI and automation projects.</li>
+            </ol>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sachin Dangal &mdash; All text, images, and code on this website are my original work or are used with permission from the copyright holder.</p>
+        <p>Created for ITC293, Charles Sturt University, 2026 Session 1.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!--
+    File:        sd_A4_newsletter.html
+    Author:      Sachin Dangal | Student ID: 11873136
+    Subject:     ITC293 - Assessment 4
+    Description: Newsletter signup form for NexaCore Corporation.
+                 Opens in a new tab from sd_A4_javascriptpage.html.
+                 Features:
+                   - onload alert: "Welcome to the NexaCore Corporation - Newsletter Signup"
+                   - Text boxes (maxlength 60) for First Name and Last Name (required)
+                   - Email box (maxlength 60) for Email Address
+                   - 5 radio buttons for age ranges
+                   - 5 checkboxes for NexaCore service areas
+                   - Textarea (cols 60, rows 3) for a message
+                   - Submit button with JS validation (name fields must not be empty)
+                   - Reset button to clear all fields
+                   - Styled with pure CSS from style.css (no inline styles)
+                   - Form uses POST method
+    Last edited: 7 June 2026
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NexaCore Corporation Newsletter Signup Form.">
+    <meta name="author" content="Sachin Dangal">
+    <title>NexaCore - Newsletter Signup</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <!-- Single external stylesheet — form styles are in the form-specific section of style.css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- External JS — showWelcomeAlert() and validateNewsletterForm() live in scripts.js -->
+    <script src="scripts.js"></script>
+</head>
+<!--
+    window.onload fires showWelcomeAlert() as soon as the page finishes loading.
+    showWelcomeAlert() is defined in scripts.js and displays:
+    "Welcome to the NexaCore Corporation - Newsletter Signup"
+-->
+<body class="form-page" onload="showWelcomeAlert()">
+
+    <header class="site-header">
+        <img src="logo.png" alt="NexaCore logo" class="site-logo">
+        <a href="index.html" class="site-title">Sachin Dangal</a>
+    </header>
+
+    <div class="form-wrapper">
+        <div class="form-card">
+            <h1>NexaCore Corporation</h1>
+            <p class="form-subtitle">Newsletter Signup &mdash; stay informed on the latest NexaCore news and services.</p>
+
+            <!-- Required fields note -->
+            <div class="info-box">
+                Fields marked with <strong>*</strong> are required. The form will not submit if either name field is left empty.
+            </div>
+
+            <!--
+                action="#" is a placeholder — in a live environment this would point to a
+                server-side script. method="post" is used as required.
+                onsubmit calls validateNewsletterForm() from scripts.js.
+                If validation fails, the function returns false and prevents submission.
+            -->
+            <form
+                name="newsletterForm"
+                action="#"
+                method="post"
+                onsubmit="return validateNewsletterForm(this);"
+            >
+
+                <!-- First Name -->
+                <div class="form-group">
+                    <label for="firstName">First Name <span class="req">*</span></label>
+                    <!--
+                        maxlength="60" restricts input to 60 characters as required.
+                        name="firstName" matches the property accessed in validateNewsletterForm().
+                    -->
+                    <input
+                        type="text"
+                        id="firstName"
+                        name="firstName"
+                        maxlength="60"
+                        placeholder="Enter your first name"
+                    >
+                </div>
+
+                <!-- Last Name -->
+                <div class="form-group">
+                    <label for="lastName">Last Name <span class="req">*</span></label>
+                    <input
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        maxlength="60"
+                        placeholder="Enter your last name"
+                    >
+                </div>
+
+                <!-- Email Address -->
+                <div class="form-group">
+                    <label for="emailAddress">Email Address</label>
+                    <!-- type="email" provides built-in browser format validation -->
+                    <input
+                        type="email"
+                        id="emailAddress"
+                        name="emailAddress"
+                        maxlength="60"
+                        placeholder="you@example.com"
+                    >
+                </div>
+
+                <!-- Age Range — 5 radio buttons -->
+                <div class="form-group">
+                    <label>Age Range</label>
+                    <div class="radio-group">
+                        <!-- Only one radio button may be selected at a time (same name attribute) -->
+                        <label>
+                            <input type="radio" name="ageRange" value="15-25"> 15 &ndash; 25
+                        </label>
+                        <label>
+                            <input type="radio" name="ageRange" value="26-35"> 26 &ndash; 35
+                        </label>
+                        <label>
+                            <input type="radio" name="ageRange" value="36-45"> 36 &ndash; 45
+                        </label>
+                        <label>
+                            <input type="radio" name="ageRange" value="46-55"> 46 &ndash; 55
+                        </label>
+                        <label>
+                            <input type="radio" name="ageRange" value="55+"> 55+
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Services / Sectors — 5 checkboxes for NexaCore's service areas -->
+                <div class="form-group">
+                    <label>NexaCore Services You Are Interested In</label>
+                    <div class="checkbox-group">
+                        <!-- Each checkbox has a unique name and descriptive value -->
+                        <label>
+                            <input type="checkbox" name="service_cloud" value="Cloud Infrastructure">
+                            Cloud Infrastructure
+                        </label>
+                        <label>
+                            <input type="checkbox" name="service_ai" value="AI Integration">
+                            AI Integration
+                        </label>
+                        <label>
+                            <input type="checkbox" name="service_cyber" value="Cybersecurity">
+                            Cybersecurity
+                        </label>
+                        <label>
+                            <input type="checkbox" name="service_dev" value="Software Development">
+                            Software Development
+                        </label>
+                        <label>
+                            <input type="checkbox" name="service_support" value="IT Support">
+                            IT Support
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Message / Comments textarea -->
+                <div class="form-group">
+                    <label for="userMessage">Message or Comments</label>
+                    <!--
+                        cols="60" and rows="3" satisfy the minimum size requirement.
+                        resize: vertical is set in CSS allowing the user to expand if needed.
+                    -->
+                    <textarea
+                        id="userMessage"
+                        name="userMessage"
+                        cols="60"
+                        rows="3"
+                        placeholder="Any questions or comments about NexaCore services..."
+                    ></textarea>
+                </div>
+
+                <!-- Submit and Reset buttons -->
+                <div class="form-actions">
+                    <!--
+                        type="submit" triggers the form's onsubmit handler.
+                        validateNewsletterForm() is called; if it returns false the form
+                        will NOT submit to the server and an alert is displayed.
+                    -->
+                    <button type="submit" class="btn-submit">Sign Up</button>
+
+                    <!--
+                        type="reset" clears all form fields back to their default (empty) state.
+                        No additional JavaScript needed — the browser handles this natively.
+                    -->
+                    <button type="reset" class="btn-reset">Reset Form</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Sachin Dangal &mdash; All text, images, and code on this website are my original work or are used with permission from the copyright holder.</p>
+        <p>Created for ITC293, Charles Sturt University, 2026 Session 1.</p>
+    </footer>
+</body>
+</html>
